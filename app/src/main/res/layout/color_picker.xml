@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/redButton"
+        android:layout_alignParentBottom="true"
+        android:background="#ffff1e15" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/greenButton"
+        android:layout_alignParentBottom="true"
+        android:background="#005C00" />
+
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/skyBlueButton"
+        android:layout_alignParentBottom="true"
+        android:background="#33CCFF" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/limeGreenButton"
+        android:layout_alignParentBottom="true"
+        android:background="#A3CC29" />
+
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/purpleButton"
+        android:layout_alignParentBottom="true"
+        android:background="#3D007A" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/magentaButton"
+        android:layout_alignParentBottom="true"
+        android:background="#A3007A" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/lightPinkButton"
+        android:layout_alignParentBottom="true"
+        android:background="#FF99CC" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/yellowButton"
+        android:layout_alignParentBottom="true"
+        android:background="#E8E819" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/orangeButton"
+        android:layout_alignParentBottom="true"
+        android:background="#FF7519" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/blueButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="#ff1e33ff"
+        android:layout_alignTop="@+id/redButton" />
+
+<!--repeat-->
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/whiteButton"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/blackButton"
+        android:layout_alignParentBottom="true"
+        android:background="#000000" />
+
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/greyButton"
+        android:layout_alignParentBottom="true"
+        android:background="#666666" />
+
+
+</LinearLayout>
+
+    <!--another linear layout-->
+
