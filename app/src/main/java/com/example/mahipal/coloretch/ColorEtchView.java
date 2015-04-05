@@ -11,50 +11,26 @@ import android.view.View;
 
 public class ColorEtchView extends View {
 
-    //final Button blueButton;
-    //final Button redButton;
-    //final Button greenButton;
-   //final Button skyBlueButton;
-    //final Button limeGreenButton;
-    //final Button purpleButton;
-   //final Button magentaButton;
-   //final Button lightPinkButton;
-   //final Button yellowButton;
-   //final Button orangeButton;
+
+final RectF blueRect = new RectF(0.0f, 0.0f, 40.0f, 40.0f);
+final RectF greenRect = new RectF(40.0f, 0.0f, 80.0f, 40.0f);
+final RectF redRect = new RectF(80.0f, 0.0f, 120.0f, 40.0f);
 
 
+   final Path path = new Path();
+   final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
-    final Path path = new Path();
-    final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+
 
     public ColorEtchView(Context context) {
         super(context);
 
-        //Switch(paint) {
-        //Case R.id.redButton:
-        //redButton.isPressed();
-        // paint.setColor(Color.parseColor("#ffff1e15"));
-        //break;
-        // }
 
-
-        paint.setColor(Color.BLACK);
+        //paint.setColor(Color.BLACK);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(1);
+        paint.setStrokeWidth(3);
 
-        //LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //LinearLayout linearLayout = (LinearLayout)inflater.inflate(R.layout.color_picker, null);
 
-        //blueButton = (Button)linearLayout.findViewById(R.id.blueButton);
-        //redButton = (Button) linearLayout.findViewById(R.id.redButton);
-        //greenButton = (Button) linearLayout.findViewById(R.id.greenButton);
-        //skyBlueButton = (Button) linearLayout.findViewById(R.id.skyBlueButton);
-        //limeGreenButton = (Button) linearLayout.findViewById(R.id.limeGreenButton);
-        //purpleButton = (Button) linearLayout.findViewById(R.id.purpleButton);
-        //magentaButton = (Button) linearLayout.findViewById(R.id.magentaButton);
-        //lightPinkButton = (Button) linearLayout.findViewById(R.id.lightPinkButton);
-        //yellowButton = (Button) linearLayout.findViewById(R.id.yellowButton);
-        //orangeButton = (Button) linearLayout.findViewById(R.id.orangeButton);
 
         setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -63,14 +39,42 @@ public class ColorEtchView extends View {
                     case MotionEvent.ACTION_DOWN:
                         path.moveTo(event.getX(), event.getY());
                         invalidate();	//call onDraw
+
+
+//change the stroke colors:
+                    if (blueRect.contains(event.getX(),event.getY())) {
+                        //path.reset();
+                        paint.setColor(Color.BLUE);
+
+                    }
+                    else if(greenRect.contains(event.getX(),event.getY())) {
+                       //path.reset();
+                        paint.setColor(Color.GREEN);
+                    }
+
+
+                    else if(redRect.contains(event.getX(),event.getY())) {
+                        //path.reset();
+                        paint.setColor(Color.RED);
+                    }
+                        else{}
+
+
                         return true;
 
                     case MotionEvent.ACTION_MOVE:
+
                         path.lineTo(event.getX(), event.getY());
                         invalidate();	//call onDraw
+
+
+
                         return true;
 
+
+
                     default:
+
                         return false;
                 }
             }
@@ -85,20 +89,21 @@ public class ColorEtchView extends View {
         canvas.drawColor(Color.WHITE);	//background
         canvas.drawPath(path, paint);
 
-        RectF blueRect = new RectF();
-        blueRect.set(0, 0, 40, 40); //left, top, right, bottom
+
+        //RectF blueRect = new RectF();
+        blueRect.set(0.0f, 0.0f, 40.0f, 40.0f); //left, top, right, bottom
         Paint blue = new Paint(); //setting up blue variable to paint rectangle blue
         blue.setColor(Color.BLUE);
         blue.setStyle(Paint.Style.FILL);
 
 
-        RectF greenRect = new RectF();
+        //RectF greenRect = new RectF();
         greenRect.set(40, 0, 80, 40); //left, top, right, bottom
         Paint green = new Paint();
         green.setColor(Color.GREEN);
         green.setStyle(Paint.Style.FILL);
 
-        RectF redRect = new RectF(80, 0, 120, 40);
+        //RectF redRect = new RectF(80, 0, 120, 40);
         redRect.set(80, 0, 120, 40); //left, top, right, bottom
         Paint red = new Paint();
         red.setColor(Color.RED);
@@ -114,3 +119,4 @@ public class ColorEtchView extends View {
 
 
 }
+
